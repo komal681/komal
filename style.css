@@ -1,31 +1,31 @@
-body{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: aquamarine;
-    margin: 50px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+*{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
 }
-.container{
-    background: brown;
-    padding: 20px;
-    border-radius: 10px;
-    width: 350px;
+#list{
+    color: crimson;
 }
-h2{
-    text-align: center;
+.list1{
+    color: darkorchid;
+}
+.ul1{
+    background-color: rgb(165, 42, 42);
     color: black;
+    width: 25%;
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid black;
+    border-radius: 10px;
+    transition: 0.5 ease-in-out;
 }
-button{
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px;
+.ul1:hover{
+    background-color: darkolivegreen;
+    border: 2px solid black;
 }
-.ul{
-    list-style: none;
-    padding: 10px;
-        margin-top: 20px;
+.ul1 ol li{
+    font-size: 30px;
+    font-weight: 700;
 }
-
+table,th,td{
+    border: 1px solid black;
+}
