@@ -1,31 +1,20 @@
-*{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+ody{
+    font-family: Arial,sans-serif;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
 }
-#list{
-    color: crimson;
+.container{
+    text-align: center;
+    background: white;
+    padding: 20px 40px;
+    border-radius: 10px; 
 }
-.list1{
-    color: darkorchid;
-}
-.ul1{
-    background-color: rgb(165, 42, 42);
-    color: black;
-    width: 25%;
-    padding: 20px;
-    margin: 20px;
-    border: 5px solid black;
-    border-radius: 10px;
-    transition: 0.5 ease-in-out;
-}
-.ul1:hover{
-    background-color: darkolivegreen;
-    border: 2px solid black;
-}
-.ul1 ol li{
-    font-size: 30px;
-    font-weight: 700;
-}
-table,th,td{
-    border: 1px solid black;
+button{
+    background-color: aqua;
+    color: #f4f4f9;
 }
