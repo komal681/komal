@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
@@ -16,10 +16,16 @@
         <a href="array.html">array</a>
         <a href="if_else.html">if_else</a>
         </nav>
+        <div><h5>items=['apple','banan','cheryy','date',orange]
+        </h5></div>
         <div class="container">
-            <h1>Welcome to basic javascript site</h1>
-            <p>click the links above to explore javascript functionalities.</p>
+           <h2>select an array items</h2>
+           <input type="number" id="arrayIndex" placeholder="enter index(0-4)">
+           <button onclick="displayArrayItem()">show item</button>
+           <p id="arrayResult"></p>
         </div>
+        <script src="script.js"></script>
+          
     
 </body>
 </html>

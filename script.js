@@ -1,41 +1,37 @@
-document.addEventListener("Todos",init);
- function init(){
-    loadTasks();
- }
- function loadTasks(){
-    
-        const tasks = JSON.parse(localStroage.getItem("task"))||[];
-        tasks.forEach(task => addTaskToDOM(task));
- }
- function addTask(){
-    const taskInput=document.getElementById("taskInput");
-    const task=taskInput.value.trim();
-    if(task=="") return;
-
-    addTaskToDOM(task);
-    saveTask(task);
-    taskInput.value="";
- }
- function addTaskToDOM(task){
-    const taskList=document.getElementById("taskList");
-    const li=document.createElement("li");
-    li.innerHTML=`${task} <button class="remove-btn">remove</button>`
-    taskList.appendChild(li);
-    li.querySelector(".remove-btn").addEventListener("click",function(){
-        removeTask(task,li);
-    })
-
- }
- function saveTask(task){
-    const tasks=JSON.parse(localStorage.getItem("tasks"))||[];
-    tasks.push(task);
-    localStorage.setItem("tasks",JSON.stringify(tasks));
- }
- function removeTask(task,element){  
-    let tasks=JSON.parse(localStorage.getItem("tasks"));
-    tasks=tasks.filter(t=> t!==task);
-    localStorage.setItem("tasks",JSON.stringify(tasks));
-    element.remove();
- }
-    
- 
+function showAlert(){
+    alert('hello this  is a javascript alert');
+}
+function changeText(){
+    ducument.getElementedById('text').innerHTML='Text changed';
+}
+function handleClick(){
+    document.getElementedById('clickMessage').innerHTML='Button Clicked';
+}
+function validateForm(){
+    let name=document.getElementedById('name').value;
+    if(name==''){
+        alert('please enter your name');
+        return false;
+    }
+    return true;
+}
+function checkNumber(){
+    let num=parseInt(document.getElementById('number input').value);
+    let result=num>10?'Greater than 10':'10 or less';
+    document.getElementById('numberResult').innerHTML=result;
+}
+function checAge(){
+    let age=parseInt(document.getElementsById('ageInput').value);
+    if(age>=18){
+        document.getElementById('ageresult'),innerHTML='You are an adult';
+    }else
+    {
+        document.getElementById('ageResult').innerHTML='you are a minor';
+    }
+}
+function displayArrayItem(){
+    let items=['Apple','Banana','cherry','Date','orange'];
+    let index=parseInt(document.getElementById('array index').value);
+    let result=items[index]||'Invalid index';
+    document.getElementById('arrayResult').innerHTML=result;
+}
