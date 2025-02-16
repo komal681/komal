@@ -1,37 +1,44 @@
-function showAlert(){
-    alert('hello this  is a javascript alert');
-}
-function changeText(){
-    ducument.getElementedById('text').innerHTML='Text changed';
-}
-function handleClick(){
-    document.getElementedById('clickMessage').innerHTML='Button Clicked';
-}
-function validateForm(){
-    let name=document.getElementedById('name').value;
-    if(name==''){
-        alert('please enter your name');
-        return false;
+document.getElementById("registerForm") .addEventListener("submit",function(event){
+    event.preventDefault();
+    let username = document.getElementById("regUsername").value;
+    let password = document.getElementById("regPassword").value;
+    if( username === "" || password === ""){
+        alert ("All fields are required");
+        return;
     }
-    return true;
-}
-function checkNumber(){
-    let num=parseInt(document.getElementById('number input').value);
-    let result=num>10?'Greater than 10':'10 or less';
-    document.getElementById('numberResult').innerHTML=result;
-}
-function checAge(){
-    let age=parseInt(document.getElementsById('ageInput').value);
-    if(age>=18){
-        document.getElementById('ageresult'),innerHTML='You are an adult';
-    }else
-    {
-        document.getElementById('ageResult').innerHTML='you are a minor';
+    let users= JSON.parse(localStorage.getItem("users")) || [];
+    let userExists= users.some(user => user.username === username);
+    if(userExists){
+        alert("username already taken");
+        return;
     }
-}
-function displayArrayItem(){
-    let items=['Apple','Banana','cherry','Date','orange'];
-    let index=parseInt(document.getElementById('array index').value);
-    let result=items[index]||'Invalid index';
-    document.getElementById('arrayResult').innerHTML=result;
-}
+    users.push({ username, password});
+
+localStorage.setItem("users",JSON.stringify(users));
+alert("Registration successfully you can now log in");
+   document.getElementById("registerForm").reset();
+  
+});
+document.getElementById("loginForm").addEventListener("submit",function(event){
+    event.preventDefault();
+
+    let username=document.getElementById("loginUsername").value;
+    let password=document.getElementById("loginPassword").value;
+    let message=document.getElementById("message");
+
+    let users= JSON.parse(localStorage.getItem("users"))||[];
+    let validUser= users.find(user => user.username === username && user.password === password);
+    if(validUser) {
+    
+
+        message.style.color="green";
+        message.textContent="Login sucessfull";
+
+    }else{
+        message.style.color="red";
+        message.textContent="invalid username or password";
+    }
+    document.getElementById("loginForm").reset();
+});
+
+

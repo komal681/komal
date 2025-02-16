@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">home</a>
-        <a href="alert.html">alert</a>
-        <a href="dom.html">dom manipulation</a>
-        <a href="event.html">event</a>
-        <a href="form.html">form</a>
-        <a href="array.html">array</a>
-        <a href="if_else.html">if_else</a>
-        </nav>
-        <div class="container">
-            <h1>Welcome to basic javascript site</h1>
-            <p>click the links above to explore javascript functionalities.</p>
-        </div>
+    <div class="container">
+        <h2> User Registration</h2>
+        <form id="registerForm">
+            <input type="text" id="regUsername" placeholder="Enter Username" required>
+           <input type="password" id="regPassword" placeholder="Enter Password" required>
+           <button type="submit">Register</button>
+
+        </form>
+        <h2>User Login</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Enter Username" required>
+            <input type="password" id="loginPassword" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+            </form>
+            <p id="message"></p>
+            </div>
+            <script src="script.js"></script>
     
 </body>
 </html>
